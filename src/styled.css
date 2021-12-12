@@ -1,0 +1,20 @@
+.App {
+  margin:0;
+  box-sizing: border-box;
+  text-align: center;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+}
+
+.banner {
+  height:30vh;
+  width:100vw;
+  color:#fff;
+  background-color:#C34444 
+}
+
+.card-list{
+  border:2px solid blue;
+}
