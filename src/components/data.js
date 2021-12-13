@@ -1,0 +1,40 @@
+export const GUESTS = [
+    {
+        title: "Mr.",
+        name: "Chuchu",
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8GSq_y-2Cr5j_6srGAfnGOTF4a6dEQHwQzIALkjY0earyawWrNx3fnIF7hGH17Fu2LE&usqp=CAU",
+        note: "likes to stare people",
+        email: "chuchu8@gmail.meow",
+        status: ["invited", "rsvp"]
+    },
+    {
+        title: "Mr.",
+        name: "Tomie",
+        url: "https://cdn.pixabay.com/photo/2017/07/06/05/01/bengal-2476933__480.jpg",
+        note: "a big rocket league fan",
+        email: "tomtom@gmail.lol",
+        status: ["invited", "rsvp"]
+    },
+    {
+        title: "Miss.",
+        name: "Nabi",
+        url: "https://cdn.famtimes.co.kr/news/photo/202012/502104_3008_164.png",
+        note: "likes to sleep",
+        email: "bibi@gmail.neow",
+        status: ["invited", "no rsvp"]
+    },
+    {
+        title: "Mrs.",
+        name: "Piguie",
+        url: "https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_280/5-3-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg",
+        note: "ADHD",
+        email: "piguie@gmail.oink",
+        status: ["invited", "rsvp"]
+    },
+];
+
+// https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_280/5-3-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg
+
+// https://cdn.famtimes.co.kr/news/photo/202012/502104_3008_164.png
+
+// 
