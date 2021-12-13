@@ -25,12 +25,12 @@ export default function CardList() {
                 <Typography className="chip invited" variant="subtitle2">
                     #invited
                 </Typography>
-                <Typography className="chip rsvp" variant="subtitle2">
-                    #rsvp
+                <Typography className="chip responded" variant="subtitle2">
+                    #responded
                 </Typography>
             </Stack>
             {/* guest-list */}
-            <Carousel responsive={responsive}>
+            <Carousel autoPlay={true} responsive={responsive}>
                 {GUESTS.map((person) => {
                     return (
                         <Card sx={{ m: 2, p: 2, width: '200px' }}>
@@ -41,7 +41,7 @@ export default function CardList() {
                                         {/* 아래 조건문으로 바꾸기 */}
                                         {person.status[0]}
                                     </Typography>
-                                    <Typography className="chip rsvp" variant="caption">
+                                    <Typography className="chip responded" variant="caption">
                                         {person.status[1]}
                                     </Typography>
                                 </Stack>
