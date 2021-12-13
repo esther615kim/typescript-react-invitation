@@ -1,6 +1,6 @@
 ## Project Overfiew
 - TypeScript
-- React
+- React & Context API
 - mui
 - TDD
 

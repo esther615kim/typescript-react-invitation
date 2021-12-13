@@ -6,6 +6,8 @@
   height:100vh;
   display:flex;
   flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .banner {
@@ -16,5 +18,11 @@
 }
 
 .card-list{
-  border:2px solid blue;
+  text-align: left;
+}
+
+.profile-box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
