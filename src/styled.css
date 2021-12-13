@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Readex+Pro:wght@400;700&display=swap');
 .App {
   margin:0;
+  font-family: 'Readex Pro', sans-serif;
   box-sizing: border-box;
   text-align: center;
   width:100vw;
@@ -11,7 +13,7 @@
 }
 
 .banner {
-  height:30vh;
+  height:25vh;
   width:100vw;
   color:#fff;
   background-color:#C34444 
@@ -19,8 +21,10 @@
 
 .card-list{
   text-align: left;
-  max-width:455px;
-  /* border:1px solid blue; */
+  max-width:765px;
+  max-height:400px;
+  padding:1rem;
+  /* border:1px solid salmon; */
 }
 
 .profile-box{
@@ -31,18 +35,36 @@
 }
 
 .chip{
-  min-width:38px;
+  min-width:35px;
   border:1px solid #ddd;
   border-radius: 10px;
-  padding:3px 5px;
+  padding:0 3px;
   display:flex;
   text-align: center;
   margin:3px;
   color:#C34444;
-  font-weight: 700;
+  font-weight: 800;
+  /* margin-right:2px; => not working */
 }
 
 .chip.rsvp{
   color:#2e7d32;
   min-width:30px;
+}
+
+.modal{
+  position:absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:20rem;
+  height:20rem;
+  border-radius:5px;
+  box-shadow: 10px;
+  padding:5px;
+  background-color: #fff;
 }

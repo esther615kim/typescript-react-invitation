@@ -3,12 +3,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Card, Typography, Box, Stack, Avatar } from '@mui/material';
 import { GUESTS } from './data';
+import Totals from './Totals';
 
 const responsive = {
     desktop: {
         // the naming can be any, depends on you.
-        breakpoint: { max: 2000, min: 765 },
-        items: 2,
+        breakpoint: { max: 2400, min: 765 },
+        items: 3,
     },
     mobile: {
         breakpoint: { max: 765, min: 0 },
@@ -17,22 +18,22 @@ const responsive = {
 };
 
 export default function CardList() {
-    console.log(GUESTS);
     return (
         <div className="card-list">
+            {/* status */}
             <Stack direction="row" spacing={1}>
-                <Typography className="chip invited" variant="subtitle1">
+                <Typography className="chip invited" variant="subtitle2">
                     #invited
                 </Typography>
-                <Typography className="chip rsvp" variant="subtitle1">
+                <Typography className="chip rsvp" variant="subtitle2">
                     #rsvp
                 </Typography>
             </Stack>
-
-            <Carousel showDots={true} responsive={responsive}>
+            {/* guest-list */}
+            <Carousel responsive={responsive}>
                 {GUESTS.map((person) => {
                     return (
-                        <Card sx={{ m: 2, p: 2, width: '160px' }}>
+                        <Card sx={{ m: 2, p: 2, width: '200px' }}>
                             <Box className="profile-box">
                                 <Avatar alt={person.name} src={person.url} />
                                 <Stack direction="row">
@@ -57,6 +58,8 @@ export default function CardList() {
                     );
                 })}
             </Carousel>
+
+            <Totals />
         </div>
     );
 }
