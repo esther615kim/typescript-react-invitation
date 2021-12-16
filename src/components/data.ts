@@ -1,14 +1,14 @@
 export interface Invited {
-    cats: {
-        title: string;
-        name: string;
-        url: string;
-        email: string;
-        status?: string;
-    };
+    title: string;
+    name: string;
+    url: string;
+    email: string;
+    note: string;
+    status?: string;
 }
 
-export const GUESTS: Invited['cats'] = [
+// #2 Invited[]
+export const GUESTS: Array<Invited> = [
     // export const GUESTS: Invited['cats'] = [
     {
         title: 'Mr.',
