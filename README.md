@@ -2,7 +2,6 @@
 - TypeScript
 - React & Context API
 - mui
-- TDD
 
 ### wireframe
 https://www.figma.com/file/h8UzSwtc6siAAww2MuCDl0/invitation-ts?node-id=0%3A1
