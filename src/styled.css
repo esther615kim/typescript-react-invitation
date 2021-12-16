@@ -47,7 +47,7 @@
   /* margin-right:2px; => not working */
 }
 
-.chip.rsvp{
+.chip.responded{
   color:#2e7d32;
   min-width:30px;
 }

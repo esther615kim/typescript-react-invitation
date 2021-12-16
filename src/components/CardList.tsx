@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, Typography, Box, Stack, Avatar } from '@mui/material';
+import { Card, Typography, Box, Stack, Modal, Avatar } from '@mui/material';
 import { GUESTS } from './data';
+import { Invited } from './data';
 import Totals from './Totals';
 
+// 타입지정?
 const responsive = {
     desktop: {
         // the naming can be any, depends on you.
@@ -18,6 +20,9 @@ const responsive = {
 };
 
 export default function CardList() {
+    const [open, setOpen] = useState<boolean>(false);
+    const handleOpen = (): void => setOpen(true); // 원래는 param 입력 X
+    const handleClose = (): void => setOpen(false);
     return (
         <div className="card-list">
             {/* status */}
@@ -29,20 +34,28 @@ export default function CardList() {
                     #responded
                 </Typography>
             </Stack>
-            {/* guest-list */}
+            {/* modal */}
+            <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title">
+                <Box className="modal">
+                    <Box id="modal-modal-title" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <h3>to-be-updated</h3>
+                    </Box>
+                </Box>
+            </Modal>
+            ;{/* guest-list */}
             <Carousel autoPlay={true} responsive={responsive}>
-                {GUESTS.map((person) => {
+                {GUESTS.map((person: Invited) => {
                     return (
-                        <Card sx={{ m: 2, p: 2, width: '200px' }}>
+                        <Card onClick={handleOpen} sx={{ m: 2, p: 2, width: '200px' }}>
                             <Box className="profile-box">
                                 <Avatar alt={person.name} src={person.url} />
                                 <Stack direction="row">
                                     <Typography className="chip" variant="caption">
                                         {/* 아래 조건문으로 바꾸기 */}
-                                        {person.status[0]}
+                                        {person.status}
                                     </Typography>
                                     <Typography className="chip responded" variant="caption">
-                                        {person.status[1]}
+                                        wishlist
                                     </Typography>
                                 </Stack>
                             </Box>
@@ -58,8 +71,11 @@ export default function CardList() {
                     );
                 })}
             </Carousel>
-
             <Totals />
         </div>
     );
+}
+
+{
+    /* modal */
 }
