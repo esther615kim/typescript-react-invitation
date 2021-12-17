@@ -23,10 +23,11 @@ export default function AddGuest() {
     };
 
     const handleClick = (): void => {
-        // input value => guests로 추가하는 함수
+        // input value => guests로 추가하는 함수임 prerequisite: contextAPI에서 guests,setGuests 설정
         console.log('added');
         // if(!input.name||)
     };
+
     return (
         <div>
             {/* button */}
