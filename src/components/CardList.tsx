@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Card, Typography, Box, Stack, Modal, Avatar } from '@mui/material';
-import { GUESTS } from './data';
-import { Invited } from './data';
+import { GUESTS, Invited } from './data';
 import Totals from './Totals';
 
-// 타입지정?
 const responsive = {
     desktop: {
         // the naming can be any, depends on you.
@@ -21,7 +19,7 @@ const responsive = {
 
 export default function CardList() {
     const [open, setOpen] = useState<boolean>(false);
-    const handleOpen = (): void => setOpen(true); // 원래는 param 입력 X
+    const handleOpen = (): void => setOpen(true);
     const handleClose = (): void => setOpen(false);
     return (
         <div className="card-list">
