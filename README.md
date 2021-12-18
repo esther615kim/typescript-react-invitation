@@ -62,7 +62,8 @@ tried #1 https://stackoverflow.com/questions/63912721/failed-to-load-config-reac
 
 ### To-dos
 - [x]`add` a modal for adding a guest 
-- [x]`add` React Context
+- [x]`refactor` using React Context api for statemanagement
+- [] `add` remove guest list
 - []`fix` eslint & prettier setting (still open as of 17-Dec) 
 - []`refactor` codes in TS
 
