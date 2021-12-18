@@ -1,14 +1,14 @@
 export interface Invited {
-    cats: {
-        title: string;
-        name: string;
-        url: string;
-        email: string;
-        status?: string;
-    };
+    title: string;
+    name: string;
+    url: string;
+    email: string;
+    note: string;
+    status?: string;
 }
 
-export const GUESTS: Invited['cats'] = [
+// #2 Invited[]
+export const GUESTS: Array<Invited> = [
     // export const GUESTS: Invited['cats'] = [
     {
         title: 'Mr.',
@@ -16,7 +16,7 @@ export const GUESTS: Invited['cats'] = [
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8GSq_y-2Cr5j_6srGAfnGOTF4a6dEQHwQzIALkjY0earyawWrNx3fnIF7hGH17Fu2LE&usqp=CAU',
         note: 'likes to stare at people',
         email: 'chuchu8@gmail.meow',
-        status: 'invited',
+        status: 'responded',
     },
     {
         title: 'Mr.',

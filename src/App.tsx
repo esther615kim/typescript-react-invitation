@@ -1,14 +1,21 @@
 import './styled.css';
 import CardList from './components/CardList';
 import AddGuest from './components/AddGuest';
+import { GUESTS } from './components/data';
+import { GuestsContext } from './contexts/GuestsContext'; // Context
+import { useState } from 'react';
 
 function App() {
+    const [guests, setGuests] = useState(GUESTS); // type
+    // console.log(guests.length);
     return (
         <div className="App">
-            <div className="banner"></div>
-            <h1>Guest List</h1>
-            <CardList />
-            <AddGuest />
+            <GuestsContext.Provider value={{ guests, setGuests }}>
+                <div className="banner"></div>
+                <h1>Guest List</h1>
+                <CardList />
+                <AddGuest />
+            </GuestsContext.Provider>
         </div>
     );
 }
