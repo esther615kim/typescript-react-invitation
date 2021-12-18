@@ -73,3 +73,4 @@ tried #1 https://stackoverflow.com/questions/63912721/failed-to-load-config-reac
 ### References
 `React Context`https://reactjs.org/docs/context.html
 `mui modal component` https://mui.com/components/modal/
+`how to pass value when using mui Radio buttons` https://stackoverflow.com/questions/69762100/mui-radio-pass-the-label-and-value-in-onchange-when-selected

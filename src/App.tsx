@@ -1,7 +1,7 @@
 import './styled.css';
 import CardList from './components/CardList';
 import AddGuest from './components/AddGuest';
-import { GUESTS, Invited } from './components/data';
+import { GUESTS } from './components/data';
 import { GuestsContext } from './contexts/GuestsContext'; // Context
 import { useState } from 'react';
 

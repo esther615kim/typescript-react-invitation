@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
-import '../styled.css';
-import { Invited as AddedGuest } from './data'; // import interface
+import React, { useState, useContext } from 'react';
+import { GuestsContext } from '../contexts/GuestsContext';
+import { Invited } from './data';
 import { Modal, IconButton, TextField, Button, Box, RadioGroup, Radio, FormControlLabel } from '@mui/material';
 import { AddCircleOutline, PersonAdd } from '@mui/icons-material/';
+import '../styled.css';
+
+// error
+export interface IGuest {
+    guests: Invited[];
+    setGuests: React.Dispatch<React.SetStateAction<Invited[]>>;
+}
 
 export default function AddGuest() {
+    // existing guest list
+    const { guests, setGuests }: any = useContext(GuestsContext);
+    // new guest
     const [input, setInput] = useState({
-        gender: '',
+        title: '',
         name: '',
         note: '',
         url: '',
@@ -23,9 +33,11 @@ export default function AddGuest() {
     };
 
     const handleClick = (): void => {
-        // input value => guests로 추가하는 함수임 prerequisite: contextAPI에서 guests,setGuests 설정
-        console.log('added');
-        // if(!input.name||)
+        // input value => added to the existing guest list
+        if (!input.name || !input.email) return;
+        // setGuests(...guests, input)
+        setGuests([...guests, { title: input.title, name: input.name, url: input.url, note: input.note, email: input.email, status: input.status }]);
+        console.log('new list', guests);
     };
 
     return (
@@ -41,15 +53,17 @@ export default function AddGuest() {
                     <Box id="modal-modal-description" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <PersonAdd sx={{ fontSize: 45, color: '#bbb', pb: 2 }} />
                         {/* how to add value in radioGroup? */}
-                        <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+                        <RadioGroup row aria-label="gender">
                             <FormControlLabel value="male" control={<Radio />} label="male" />
                             <FormControlLabel value="female" control={<Radio />} label="female" />
                         </RadioGroup>
-                        {/* DRY? */}
-                        <TextField onChange={handleChange} required value={input.name} label="name" variant="standard" />
-                        <TextField onChange={handleChange} required value={input.email} label="email" variant="standard" />
-                        <TextField onChange={handleChange} value={input.url} label="image" variant="standard" />
-                        <TextField onChange={handleChange} value={input.note} label="memo" variant="standard" />
+                        {/* refactor-- DRY */}
+                        <TextField name="title" required onChange={handleChange} value={input.title} label="title" variant="standard" />
+                        <TextField name="name" required onChange={handleChange} value={input.name} label="name" variant="standard" />
+                        <TextField name="url" onChange={handleChange} value={input.url} label="image" variant="standard" />
+                        <TextField name="email" onChange={handleChange} required value={input.email} label="email" variant="standard" />
+                        <TextField name="note" onChange={handleChange} value={input.note} label="memo" variant="standard" />
+                        <TextField name="status" onChange={handleChange} required value={input.status} label="status" variant="standard" />
                         <Button sx={{ margin: 2 }} fullWidth onClick={handleClick}>
                             Add
                         </Button>
@@ -61,3 +75,7 @@ export default function AddGuest() {
 }
 
 // sx={{ fontSize: 45, color: '#bbb' }}
+
+// https://static.standard.co.uk/2021/06/24/12/24110008-9ebede3c-78cc-406a-9698-b09eb033c15a.jpg?width=968&auto=webp&quality=75&crop=968%3A645%2Csmart
+
+// used https://www.oxfordmail.co.uk/resources/images/12873858.jpg?display=1&htype=0&type=responsive-gallery

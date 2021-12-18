@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { GuestsContext } from '../contexts/GuestsContext';
+import { Card, Typography, Box, Stack, Modal, Avatar } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Card, Typography, Box, Stack, Modal, Avatar } from '@mui/material';
-import { GUESTS, Invited } from './data';
 import Totals from './Totals';
+import { Invited } from './data';
 
 const responsive = {
     desktop: {
-        // the naming can be any, depends on you.
         breakpoint: { max: 2400, min: 765 },
         items: 3,
     },
@@ -18,9 +19,13 @@ const responsive = {
 };
 
 export default function CardList() {
+    const { guests }: any = useContext(GuestsContext);
     const [open, setOpen] = useState<boolean>(false);
     const handleOpen = (): void => setOpen(true);
     const handleClose = (): void => setOpen(false);
+
+    // useEffect() =>guests
+
     return (
         <div className="card-list">
             {/* status */}
@@ -42,18 +47,17 @@ export default function CardList() {
             </Modal>
             {/* guest-list */}
             <Carousel autoPlay={true} responsive={responsive}>
-                {GUESTS.map((person: Invited) => {
+                {guests.map((person: Invited) => {
                     return (
                         <Card onClick={handleOpen} sx={{ m: 2, p: 2, width: '200px' }}>
                             <Box className="profile-box">
                                 <Avatar alt={person.name} src={person.url} />
                                 <Stack direction="row">
                                     <Typography className="chip" variant="caption">
-                                        {/* 아래 조건문으로 바꾸기 */}
                                         {person.status}
                                     </Typography>
                                     <Typography className="chip responded" variant="caption">
-                                        wishlist
+                                        {person.status === 'responded' ? 'YES' : 'awaiting'}
                                     </Typography>
                                 </Stack>
                             </Box>
@@ -72,8 +76,4 @@ export default function CardList() {
             <Totals />
         </div>
     );
-}
-
-{
-    /* modal */
 }
