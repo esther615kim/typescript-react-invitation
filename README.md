@@ -49,6 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 💥 TypeScript error in C:/Users/MKKIM/Desktop/Typescript/invi/react-with-typescript/src/components/Totals.tsx(7,11):   
 Type '{}' is missing the following properties from type 'Invited[]': length, pop, push, concat, and 28 more.  TS2740
 
+`fixed` const { guests }: Array<Invited> -> any
+
 `2021.12.13` 
 status `OPEN`
 after creating scss file, uninstalled and installed yarn.

@@ -40,7 +40,7 @@ export default function CardList() {
                     </Box>
                 </Box>
             </Modal>
-            ;{/* guest-list */}
+            {/* guest-list */}
             <Carousel autoPlay={true} responsive={responsive}>
                 {GUESTS.map((person: Invited) => {
                     return (
