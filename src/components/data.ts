@@ -37,7 +37,7 @@ export const GUESTS: Array<Invited> = [
     {
         title: 'Mrs',
         name: 'Piguie',
-        url: 'https://s3.ap-northeast-2.amazonaws.com/elasticbeanstalk-ap-northeast-2-176213403491/media/magazine_img/magazine_280/5-3-%EC%8D%B8%EB%84%A4%EC%9D%BC.jpg',
+        url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg",
         note: 'ADHD',
         email: 'piguie@gmail.oink',
         status: 'responded',
