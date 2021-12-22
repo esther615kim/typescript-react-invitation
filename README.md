@@ -24,18 +24,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 `Security` in case of vulnerabilities.
 `Setting & Install` for anything installed or changed in settings.
 
+[0.0.4]
+2021.12.22
+`Added`
+- GuestInfo.tsx to create a separate Guest card from guest list (to make a reusable component)
+`Changed`
+- GuestList to add an extra modal for an individual guest card
+`Fix`
+-(close)Ts erro in GuestInfo (Props TS setting)
+
 [0.0.3]
 2021.12.17
 
-`Add`
+`Added`
 - Add context folder and GuestsContext.ts
 - changeLog format in README.
 - React and mui component reference links
 `Changed`
 - modified states and functions in AddGuest.tsx.
 - App.tsx to add a context provider.
-`Fix` 
-- (open)TS error in Totals.tsx
+`Fixed` 
+- (close)TS error in Totals.tsx
 
 [0.0.2]
 
@@ -43,6 +52,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### errorlog
 
+`2021.12.22`
+GuestInfo.tsx, Props type
+Error message:Binding element 'children' implicitly has an 'any' type.ts(7031)?
+`fixed`
+export default function GuestInfo({person}:{person:Invited}):JSX.Element ...
 
 `2021.12.17`
 `Totals.tsx`
@@ -63,12 +77,12 @@ tried #1 https://stackoverflow.com/questions/63912721/failed-to-load-config-reac
 ### To-dos
 - [x]`add` a modal for adding a guest 
 - [x]`refactor` using React Context api for statemanagement
-- [] `add` remove guest list
-- []`fix` eslint & prettier setting (still open as of 17-Dec) 
-- []`refactor` codes in TS
+- [] `add` remove function to guest card
+- [] `fix` eslint & prettier setting
+- [] `refactor` codes in TS
 
 `optional`
-- []`add` unit text codes 
+- [] `add` unit text codes 
 - [] `firebase` store data in firebase
 
 ### References
