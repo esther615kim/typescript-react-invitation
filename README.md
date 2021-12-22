@@ -1,13 +1,15 @@
 ## Project Overfiew
-- TypeScript
-- React & Context API
+`Dec.17.2021 ~Dec.23.2021`
+### Goals
+- To set up and use TypeScript in a React project
+
+### Stacks used
+- Typescript
+- React and Context API
 - mui
 
 ### wireframe
 https://www.figma.com/file/h8UzSwtc6siAAww2MuCDl0/invitation-ts?node-id=0%3A1
-
-
-
 
 ### changeLog
 All notable changes to this project will be documented in this file.
@@ -17,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ### Screenshot
-![](https://images.velog.io/images/ek615/post/d0654cde-ad5a-410b-b418-5e872a257e98/image.png)
+<img src="https://images.velog.io/images/ek615/post/d0654cde-ad5a-410b-b418-5e872a257e98/image.png" width="550"> 
 
 ####  [Unreleased]
 `Types of changes`
