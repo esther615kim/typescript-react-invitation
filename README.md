@@ -30,8 +30,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GuestInfo.tsx to create a separate Guest card from guest list (to make a reusable component)
 `Changed`
 - GuestList to add an extra modal for an individual guest card
-`Fix`
--(close)Ts erro in GuestInfo (Props TS setting)
+`Fixed`
+- Ts error in GuestInfo (Props TS setting)
+- TS error about event.target
+    Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<IconButtonTypeMap<{}, "button">>>): Element', gave the following error.
+    Type '(event: ChangeEvent<HTMLInputElement>) => void' is not assignable to type 'MouseEventHandler<HTMLButtonElement>'.
+      Types of parameters 'event' and 'event' are incompatible.
+        Type 'MouseEvent<HTMLButtonElement, MouseEvent>' is not assignable to type 'ChangeEvent<HTMLInputElement>'.
+          Types of property 'target' are incompatible.
+            Type 'EventTarget' is not assignable to type 'EventTarget & HTMLInputElement'.  TS2769 (e: React.ChangeEvent<HTMLInputElement>)
 
 [0.0.3]
 2021.12.17

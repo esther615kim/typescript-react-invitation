@@ -10,7 +10,7 @@ export interface Invited {
 // #2 Invited[]
 export const GUESTS: Array<Invited> = [
     // export const GUESTS: Invited['cats'] = [
-    {
+    {   
         title: 'Mr',
         name: 'Chuchu',
         url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp8GSq_y-2Cr5j_6srGAfnGOTF4a6dEQHwQzIALkjY0earyawWrNx3fnIF7hGH17Fu2LE&usqp=CAU',
