@@ -15,6 +15,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+### Screenshot
+![](https://images.velog.io/images/ek615/post/d0654cde-ad5a-410b-b418-5e872a257e98/image.png)
+
 ####  [Unreleased]
 `Types of changes`
 `Added` for new features.
@@ -32,13 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GuestList to add an extra modal for an individual guest card
 `Fixed`
 - Ts error in GuestInfo (Props TS setting)
-- TS error about event.target
-    Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<IconButtonTypeMap<{}, "button">>>): Element', gave the following error.
-    Type '(event: ChangeEvent<HTMLInputElement>) => void' is not assignable to type 'MouseEventHandler<HTMLButtonElement>'.
-      Types of parameters 'event' and 'event' are incompatible.
-        Type 'MouseEvent<HTMLButtonElement, MouseEvent>' is not assignable to type 'ChangeEvent<HTMLInputElement>'.
-          Types of property 'target' are incompatible.
-            Type 'EventTarget' is not assignable to type 'EventTarget & HTMLInputElement'.  TS2769 (e: React.ChangeEvent<HTMLInputElement>)
+- TS error about event.target(error message shown below)
+    Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<IconButtonTypeMap<{}, "button">>>): Element', gave the following error...
 
 [0.0.3]
 2021.12.17
@@ -84,9 +83,9 @@ tried #1 https://stackoverflow.com/questions/63912721/failed-to-load-config-reac
 ### To-dos
 - [x]`add` a modal for adding a guest 
 - [x]`refactor` using React Context api for statemanagement
-- [] `add` remove function to guest card
+- [x] `add` remove function to guest card
 - [] `fix` eslint & prettier setting
-- [] `refactor` codes in TS
+- [] `add` test codes (optional)
 
 `optional`
 - [] `add` unit text codes 

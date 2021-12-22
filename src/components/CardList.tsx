@@ -27,10 +27,10 @@ export default function CardList() {
         <div className="card-list">
             {/* status */}
             <Stack direction="row" spacing={1}>
-                <Typography className="chip invited" variant="subtitle2">
+                <Typography className="chip invited" sx={{fontFamily:"Poppins, sans-serif"}} variant="subtitle2">
                     #invited
                 </Typography>
-                <Typography className="chip responded" variant="subtitle2">
+                <Typography className="chip responded" sx={{fontFamily:"Poppins, sans-serif"}} variant="subtitle2">
                     #responded
                 </Typography>
             </Stack>

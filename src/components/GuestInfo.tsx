@@ -20,14 +20,14 @@ export default function GuestInfo({ person }: { person: Invited }): JSX.Element 
                 </Box>
             </Modal>
             {/* guest card */}
-            <Card onClick={handleOpen} sx={{ m: 2, p: 2 }}>
+            <Card onClick={handleOpen} sx={{ m: 2, p: 2}}>
                 <Box className="profile-box">
                     <Avatar alt={person.name} src={person.url} />
-                    <Stack direction="row">
-                        <Typography className="chip" variant="caption">
+                    <Stack direction="row" >
+                        <Typography className="chip" variant="caption" sx={{fontFamily:"Poppins, sans-serif"}}>
                             {person.status}
                         </Typography>
-                        <Typography className="chip responded" variant="caption">
+                        <Typography sx={{fontFamily:"Poppins, sans-serif"}}className="chip responded" variant="caption">
                             {person.status === 'responded' ? 'YES' : 'awaiting'}
                         </Typography>
                     </Stack>

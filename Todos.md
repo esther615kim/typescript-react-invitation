@@ -3,14 +3,13 @@
 ### WK1
 - [x] `add` a modal for adding a guest 
 - [x] `refactor` using React Context api for statemanagement
+- [x] `add` guest card modal
 - [x] `add` remove guest card function
-- [ ] `add` guest card modal
 
 ### WK2
 `optional`
 - [] `add` unit text codes 
-- [] `firebase` store data in firebase
-- [] `fix` eslint & prettier setting (open)
+- [] `fix` optimise eslint & prettier configuration (open)
 
 ### Finally
 - [] `refactor` codes in TS
