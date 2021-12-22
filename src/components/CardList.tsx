@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useContext } from 'react';
 import { GuestsContext } from '../contexts/GuestsContext';
-import { Card, Typography, Box, Stack, Modal, Avatar } from '@mui/material';
+import { Typography, Box, Stack, Modal} from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Totals from './Totals';
 import { Invited } from './data';
+import GuestInfo from './GuestInfo';
 
 const responsive = {
     desktop: {
@@ -20,56 +21,24 @@ const responsive = {
 
 export default function CardList() {
     const { guests }: any = useContext(GuestsContext);
-    const [open, setOpen] = useState<boolean>(false);
-    const handleOpen = (): void => setOpen(true);
-    const handleClose = (): void => setOpen(false);
-
     // useEffect() =>guests
 
     return (
         <div className="card-list">
             {/* status */}
             <Stack direction="row" spacing={1}>
-                <Typography className="chip invited" variant="subtitle2">
+                <Typography className="chip invited" sx={{fontFamily:"Poppins, sans-serif"}} variant="subtitle2">
                     #invited
                 </Typography>
-                <Typography className="chip responded" variant="subtitle2">
+                <Typography className="chip responded" sx={{fontFamily:"Poppins, sans-serif"}} variant="subtitle2">
                     #responded
                 </Typography>
             </Stack>
-            {/* modal */}
-            <Modal open={open} onClose={handleClose} aria-labelledby="modal-modal-title">
-                <Box className="modal">
-                    <Box id="modal-modal-title" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <h3>to-be-updated</h3>
-                    </Box>
-                </Box>
-            </Modal>
             {/* guest-list */}
             <Carousel autoPlay={true} responsive={responsive}>
                 {guests.map((person: Invited) => {
                     return (
-                        <Card onClick={handleOpen} sx={{ m: 2, p: 2, width: '200px' }}>
-                            <Box className="profile-box">
-                                <Avatar alt={person.name} src={person.url} />
-                                <Stack direction="row">
-                                    <Typography className="chip" variant="caption">
-                                        {person.status}
-                                    </Typography>
-                                    <Typography className="chip responded" variant="caption">
-                                        {person.status === 'responded' ? 'YES' : 'awaiting'}
-                                    </Typography>
-                                </Stack>
-                            </Box>
-                            <Typography variant="h6">
-                                {person.title}
-                                {person.name}
-                            </Typography>
-                            <Typography variant="subtitle2" gutterBottom>
-                                {person.email}
-                            </Typography>
-                            <Typography variant="caption">{person.note}</Typography>
-                        </Card>
+                        <GuestInfo person={person}/>
                     );
                 })}
             </Carousel>
