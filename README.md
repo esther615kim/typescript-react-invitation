@@ -87,10 +87,9 @@ tried #1 https://stackoverflow.com/questions/63912721/failed-to-load-config-reac
 - [x]`refactor` using React Context api for statemanagement
 - [x] `add` remove function to guest card
 - [] `fix` eslint & prettier setting
-- [] `add` test codes (optional)
 
-`optional`
-- [] `add` unit text codes 
+### `Improvement ideas`
+- [] `add` test codes (optional)
 - [] `firebase` store data in firebase
 
 ### References
