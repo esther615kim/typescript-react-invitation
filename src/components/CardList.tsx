@@ -21,7 +21,6 @@ const responsive = {
 
 export default function CardList() {
     const { guests }: any = useContext(GuestsContext);
-    // useEffect() =>guests
 
     return (
         <div className="card-list">
@@ -36,9 +35,9 @@ export default function CardList() {
             </Stack>
             {/* guest-list */}
             <Carousel autoPlay={true} responsive={responsive}>
-                {guests.map((person: Invited) => {
+                {guests.map((person: Invited,key:string) => {
                     return (
-                        <GuestInfo person={person}/>
+                        <GuestInfo key={key} person={person}/>
                     );
                 })}
             </Carousel>
